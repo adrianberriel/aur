@@ -1,0 +1,26 @@
+# Maintainer: Adrian Berriel <berriel@gmail.com>
+
+pkgname=plasma-theme-helium
+pkgver=8.1
+pkgrel=1
+pkgdesc="Transparent theme based on air and eleonora. but giving it an extra touch"
+arch=('i686' 'x86_64')
+license=('GPL')
+url="http://kde-look.org/content/show.php/Helium?content=125471"
+depends=('kdebase-workspace' 'kdelibs')
+conflicts=('plasma-theme-gremix')
+source=(https://www.sugarsync.com/pf/D6477137_642_60157307)
+md5sums='d732a498f2c84b8edffc16c1a1c3efba'
+
+build() {
+  return 0
+}
+
+package() {
+
+  mkdir -p $pkgdir/usr/share/apps/desktoptheme
+  cd $srcdir
+  cp -r Helium $pkgdir/usr/share/apps/desktoptheme
+  chmod -R 755 $pkgdir/usr/share/apps/desktoptheme/Helium
+
+}
